@@ -1,0 +1,15 @@
+#header {
+   padding-top: 40px;
+}
+
+.list {
+    margin: 0 5px;
+}
+
+.title {
+    font-size: xx-large;
+}
+
+a {
+    cursor: pointer;
+}
