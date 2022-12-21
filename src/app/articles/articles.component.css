@@ -30,6 +30,10 @@ article > span {
     margin-bottom: 10px;
 }
 
+h4, h1, p {
+    margin-left: 10px;
+}
+
 .search {
     display: flex;
 }

@@ -1,0 +1,43 @@
+header {
+    border-bottom: 2px solid rgb(139, 130, 130);
+}
+
+body {
+    display: flex;
+}
+
+body > section {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.articles {
+    width: 60%;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.article {
+    border-bottom: 1px solid rgb(139, 130, 130);
+}
+
+.article > h2,
+article > h6,
+article > p,
+article > span {
+    margin-bottom: 10px;
+}
+
+.search {
+    display: flex;
+}
+
+.search > button {
+    width: 200px;
+}
+
+section {
+    margin-left: 50px;
+}

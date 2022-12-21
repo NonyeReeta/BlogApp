@@ -11,5 +11,10 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  error:string = ''
+  hide = true;
 
+  toggleVisibility() {
+    this.hide = !this.hide;
+  }
 }
