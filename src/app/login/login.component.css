@@ -82,3 +82,18 @@ color: #fff;
 border-bottom-left-radius: 0;
 border-bottom-right-radius: 4px;
 }
+
+.password-field {
+  display: flex;
+}
+
+.passwordVisibility-icon-container{
+  padding: 5px;
+  width: 30px;
+}
+
+.visibility-btn > img {
+  width: 30px;
+  height: 20px;
+  padding-top: 2px;
+}
