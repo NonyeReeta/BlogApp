@@ -74,3 +74,17 @@ outline: 0;
 transition: all 0.3s;
 }
 
+.password-field {
+  display: flex;
+}
+
+.passwordVisibility-icon-container{
+  padding: 5px;
+  width: 30px;
+}
+
+.visibility-btn > img {
+  width: 30px;
+  height: 20px;
+  padding-top: 2px;
+}

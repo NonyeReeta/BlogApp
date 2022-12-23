@@ -17,6 +17,10 @@ export class ApiService {
 
   constructor(private http: HttpClient, private router : Router) { }
 
+  userlogin(formDate: any): Observable<any> {
+    return this.http.post(`${environment.API_BASE}/login`, FormData)
+  }
+
   getUserData(): Observable<any> {
     return this.userData.asObservable();
   }

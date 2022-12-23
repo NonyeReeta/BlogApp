@@ -11,7 +11,10 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private apiService: ApiService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
@@ -28,5 +31,10 @@ export class LoginComponent implements OnInit {
     this.hide = !this.hide;
   }
 
-  login() {}
+  login() {
+    this.apiService.setLoadingStatus(true);
+    this.apiService.userlogin(this.loginForm.value).subscribe(res => {
+      console.log(res.message);
+    })
+  }
 }

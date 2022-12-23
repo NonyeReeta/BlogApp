@@ -1,5 +1,5 @@
 <div class="login-form">
-    <form>
+    <form [formGroup]="registerForm" (submit)="signup()">
       <h1>Register</h1>
       <div class="content">
         <div class="input-field">
@@ -11,8 +11,14 @@
         <div class="input-field">
           <input type="email" placeholder="Email" autocomplete="nope">
         </div>
-        <div class="input-field">
-          <input type="password" placeholder="Password" autocomplete="new-password">
+        <div class="password-field input-field">
+          <input [type]="hide ? 'password' : 'text'" placeholder="PASSWORD" autocomplete="new-password">
+          <div class="passwordVisibility-icon-container">
+            <button (click)="toggleVisibility()" class="visibility-btn">
+                <img src="assets/visibility-hidden.svg" alt="visibility-hidden" *ngIf="hide" class="hidden-icon">
+                <img src="assets/visible.svg" alt="visible" *ngIf="!hide" class="visible-icon">
+            </button>
+        </div>
         </div>
       </div>
       <div class="action">
