@@ -12,6 +12,12 @@
                     <li class="list"><a routerLink="signup">Register</a></li>
                 </ul>
             </nav>
+            <div *ngIf="username == ''">
+            <h4><a routerLink="login">Login</a> or <a routerLink="signup">Register</a> to create</h4>
+            </div>
+            <div *ngIf="username != ''">
+                <h2 style="text-transform: capitalize;">Welcome {{ username }}, Click here to go to <a>Profile</a></h2>
+            </div>
 
     </div>
 </header>
