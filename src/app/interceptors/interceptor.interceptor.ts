@@ -5,7 +5,7 @@ import {
   HttpEvent,
   HttpInterceptor,
   HttpErrorResponse,
-  HttpResponse
+  HttpResponse,
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { ApiService } from '../services/api.service'

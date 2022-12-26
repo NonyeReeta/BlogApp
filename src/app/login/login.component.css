@@ -97,3 +97,9 @@ border-bottom-right-radius: 4px;
   height: 20px;
   padding-top: 2px;
 }
+
+.error {
+  color: red;
+  font-size: 12px;
+  text-transform: lowercase;
+}

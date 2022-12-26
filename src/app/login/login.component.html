@@ -3,10 +3,10 @@
       <h1>Login</h1>
       <div class="content">
         <div class="input-field">
-          <input type="email" placeholder="Email" autocomplete="nope">
+          <input type="email" placeholder="Email" formControlName="email" name="email">
         </div>
         <div class="input-field password-field">
-          <input [type]="hide ? 'password' : 'text'" placeholder="Password" autocomplete="new-password">
+          <input [type]="hide ? 'password' : 'text'" placeholder="Password" formControlName="password" name="password">
           <div class="passwordVisibility-icon-container">
             <button (click)="toggleVisibility()" class="visibility-btn">
                 <img src="assets/visibility-hidden.svg" alt="visibility-hidden" *ngIf="hide" class="hidden-icon">
@@ -14,6 +14,10 @@
             </button>
         </div>
         
+        </div>
+        <div [hidden]="error == ''">
+        <h6 class="error">{{ error }}. please try again</h6>
+
         </div>
         <!-- <a href="#" class="">Forgot Your Password?</a> -->
       </div>

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  API_BASE: 'https://nonye-ibeanu-blogging-api.cyclic.app'
+  // API_BASE: 'https://nonye-ibeanu-blogging-api.cyclic.app',
+  API_BASE: 'http://localhost:3000'
 };
 
 /*

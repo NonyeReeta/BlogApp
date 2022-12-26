@@ -17,8 +17,8 @@ export class ApiService {
 
   constructor(private http: HttpClient, private router : Router) { }
 
-  userlogin(formDate: any): Observable<any> {
-    return this.http.post(`${environment.API_BASE}/login`, FormData)
+  userlogin(formData: any): Observable<any> {
+    return this.http.post(`${environment.API_BASE}/login`, formData)
   }
 
   getUserData(): Observable<any> {
