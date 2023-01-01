@@ -21,6 +21,10 @@ export class ApiService {
     return this.http.post(`${environment.API_BASE}/login`, formData)
   }
 
+  userSignup(formData: any): Observable<any> {
+    return this.http.post(`${environment.API_BASE}/signup`, formData)
+  }
+
   getUserData(): Observable<any> {
     return this.userData.asObservable();
   }

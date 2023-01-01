@@ -37,7 +37,6 @@ export class LoginComponent implements OnInit {
     this.apiService.userlogin(this.loginForm.value).subscribe(res => {
       if(res.error){
         this.error = res.error;
-        console.log(this.error)
       }
       else{
         // route to home page and set error to empty string

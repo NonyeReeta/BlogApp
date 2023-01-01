@@ -10,14 +10,17 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private apiService: ApiService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
   registerForm = new FormGroup({
-    firstname: new FormControl('', Validators.required),
-    lastname: new FormControl('', Validators.required),
+    firstName: new FormControl('', Validators.required),
+    lastName: new FormControl('', Validators.required),
     email: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required)
   })
@@ -30,6 +33,21 @@ export class SignupComponent implements OnInit {
   }
 
   signup() {
-    console.log('signup')
+    this.apiService.setLoadingStatus(true);
+
+    try{
+     
+    this.apiService.userSignup(this.registerForm.value).subscribe((res) => {
+        this.apiService.setUserData(res.user);
+        // this.router.navigate([''])
+        this.error = '';      
+      this.apiService.setLoadingStatus(false);
+    });
+    }
+    catch(error) {
+        this.error = "User already registered"
+        this.apiService.setLoadingStatus(false);
+    }
+
   }
 }

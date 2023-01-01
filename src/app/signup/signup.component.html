@@ -3,16 +3,16 @@
       <h1>Register</h1>
       <div class="content">
         <div class="input-field">
-            <input type="fname" placeholder="First Name" autocomplete="nope">
+            <input type="fname" placeholder="First Name" formControlName="firstName">
           </div>
           <div class="input-field">
-            <input type="lname" placeholder="Last Name" autocomplete="nope">
+            <input type="lname" placeholder="Last Name" formControlName="lastName">
           </div>
         <div class="input-field">
-          <input type="email" placeholder="Email" autocomplete="nope">
+          <input type="email" placeholder="Email" formControlName="email">
         </div>
         <div class="password-field input-field">
-          <input [type]="hide ? 'password' : 'text'" placeholder="PASSWORD" autocomplete="new-password">
+          <input [type]="hide ? 'password' : 'text'" placeholder="PASSWORD" formControlName="password">
           <div class="passwordVisibility-icon-container">
             <button (click)="toggleVisibility()" class="visibility-btn">
                 <img src="assets/visibility-hidden.svg" alt="visibility-hidden" *ngIf="hide" class="hidden-icon">
@@ -20,7 +20,11 @@
             </button>
         </div>
         </div>
+        <span>Already have an account? </span>
+        <a href="/login">Sign in</a>
       </div>
+      
+
       <div class="action">
         <button>Register</button>
       </div>
