@@ -20,7 +20,8 @@
             </button>
         </div>
         </div>
-        <span>Already have an account? </span>
+        <span [hidden]="error !== ''">Already have an account? </span>
+        <span [hidden]="error == ''" style="color: red">User already exist </span>
         <a href="/login">Sign in</a>
       </div>
       
