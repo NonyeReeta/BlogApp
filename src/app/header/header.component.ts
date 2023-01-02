@@ -12,9 +12,11 @@ export class HeaderComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    if(this.apiService.getUser()) {
-      this.username = this.apiService.getUser().firstName;
-      console.log(this.apiService.getUser())
+    if(this.apiService.getUser() !== null) {
+      const user = JSON.parse(this.apiService.getUser())
+      this.username = user.firstName;
+    } else {
+      this.username = 'Guest'
     }
   }
 

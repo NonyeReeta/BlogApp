@@ -12,7 +12,7 @@ export class ApiService {
   loadingStatus = new BehaviorSubject<boolean>(false);
 
   private userData = new BehaviorSubject<any>(
-    JSON.parse(sessionStorage.getItem('user') || '{}')
+    sessionStorage.getItem('user') || '{}'
   );
 
   constructor(private http: HttpClient, private router : Router) { }
@@ -45,7 +45,7 @@ export class ApiService {
   }
 
   getUser(): any {
-    return JSON.parse(sessionStorage.getItem('user') || '{}');
+    return sessionStorage.getItem('user') || '{}';
   }
 
   getToken() {

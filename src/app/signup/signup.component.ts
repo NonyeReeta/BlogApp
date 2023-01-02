@@ -47,19 +47,5 @@ export class SignupComponent implements OnInit {
     this.router.navigate([''])
     this.apiService.setLoadingStatus(false);
   });
-
-  // this.apiService.userSignup(this.registerForm.value).pipe(first())
-  // .subscribe(res => {
-  //       console.log(res)
-  //     this.apiService.setUserData(res.user);
-  //     this.router.navigate([''])
-  //     this.error = '';      
-  //     this.apiService.setLoadingStatus(false);
-  // },
-  // error => {
-  //     this.error = 'User already exist'
-  //   this.apiService.setLoadingStatus(false);
-  // }
-  // )
   }
 }
