@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-articles',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./articles.component.css']
 })
 export class ArticlesComponent implements OnInit {
-
-  constructor() { }
+  articles: any = []
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-  }
-
+    this.apiService.getArticles().subscribe(
+      articles => {
+        this.articles = articles;
+  })
+};
 }

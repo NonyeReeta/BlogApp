@@ -2,10 +2,10 @@
 <app-header></app-header>
 <section class="articles">
     <article class="article">
-    <h2 class="blog-title">A Blog Title</h2>
-    <h6 class="blog-desc">A Blog description </h6>
-    <p class="blog-details">Publish your passions your way. Whether you'd like to share your knowledge, experiences or the latest news, create a unique and beautiful blogPublish your passions your way. Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore. Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore. Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore. Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.</p>
-    <p>5 min read | 03:17pm 19-Dec-2020</p>
-    <span>By Authour Writers</span>
+    <h2 class="blog-title">{{article.title}}</h2>
+    <h6 class="blog-desc">{{article.description}}</h6>
+    <p class="blog-details">{{article.body}}</p>
+    <p>{{article.reading_time}}min read | {{article.timestamp | date:'short'}}</p>
+    <span>By {{article.author}}</span>
     </article>
 </section>

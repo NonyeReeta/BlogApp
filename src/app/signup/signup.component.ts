@@ -27,7 +27,7 @@ export class SignupComponent implements OnInit {
   })
 
   error:string = ''
-  hide = true;
+  hide:boolean = true;
 
   toggleVisibility() {
     this.hide = !this.hide;
