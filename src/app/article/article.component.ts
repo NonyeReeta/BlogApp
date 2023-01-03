@@ -20,7 +20,6 @@ export class ArticleComponent implements OnInit {
       article => 
       {
         this.article = article;
-        console.log(article);
       }
     )
   }

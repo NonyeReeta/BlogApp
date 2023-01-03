@@ -7,7 +7,9 @@ import { ApiService } from '../services/api.service';
   styleUrls: ['./articles.component.css']
 })
 export class ArticlesComponent implements OnInit {
-  articles: any = []
+  articles: any = [];
+  searchTerm: string = '';
+  sortTerm: string = '';
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
@@ -16,4 +18,18 @@ export class ArticlesComponent implements OnInit {
         this.articles = articles;
   })
 };
+
+// sortByTimestamp() {
+//   this.sortTerm = 'timestamp';
+// }
+
+// sortByReadCount() {
+//   this.sortTerm = 'read_count';
+// }
+
+// sortByReadTime() {
+//   this.sortTerm ='reading_time'
+
+// }
+
 }

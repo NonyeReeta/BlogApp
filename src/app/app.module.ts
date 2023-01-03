@@ -12,6 +12,8 @@ import { HeaderComponent } from './header/header.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { ArticleComponent } from './article/article.component';
 import { ProfileComponent } from './profile/profile.component';
+import { FilterPipe } from './search-articles.pipe';
+import { SortPipe } from './sort-articles.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ProfileComponent } from './profile/profile.component';
     HeaderComponent,
     ArticlesComponent,
     ArticleComponent,
-    ProfileComponent
+    ProfileComponent,
+    FilterPipe,
+    SortPipe
   ],
   imports: [
     BrowserModule,

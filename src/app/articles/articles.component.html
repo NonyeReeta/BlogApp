@@ -9,27 +9,22 @@
 		<body> 
 			
 			<section class="articles">
-				<article class="article" *ngFor="let article of articles">
+				<article class="article" *ngFor="let article of articles | filter:searchTerm | sort:sortTerm">
 				<h2 class="blog-title">{{article.title}}</h2>
 				<h6 class="blog-desc">{{article.description}}</h6>
 				<p class="blog-details">{{article.body.slice(0, article.body.length / 3)}} ... <a [routerLink]="['/article', article.title]">read more</a></p>
-				<p>{{article.reading_time}} min | {{article.timestamp | date:'short'}}</p>
+				<p>{{article.reading_time}} min | {{article.read_count}} reads | {{article.timestamp | date:'short'}}</p>
 				<span>By {{article.author}}</span>
 				</article>
 		</section>
 		<section class="side-body">
-			<form class="search">
-				<input type="text" placeholder="search articles by title">
-				<button>Search</button>
-			</form>
-			<form class="sort">
-				<select>
+				<input type="text" placeholder="search articles by title" [(ngModel)]="searchTerm">
+				<select [(ngModel)]="sortTerm">
 					<option value="">Sort by:</option>
 					<option value="read_count">Read Count</option>
 					<option value="reading_time">Read time</option>
 					<option value="timestamp">Date</option>
 				</select>
-			</form>
 		</section>
 		</body>
 		
