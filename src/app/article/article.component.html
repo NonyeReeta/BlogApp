@@ -5,7 +5,7 @@
     <h2 class="blog-title">{{article.title}}</h2>
     <h6 class="blog-desc">{{article.description}}</h6>
     <p class="blog-details">{{article.body}}</p>
-    <p>{{article.reading_time}}min read | {{article.timestamp | date:'short'}}</p>
+    <p>{{article.reading_time}}min read | {{article.read_count}} reads | {{article.timestamp | date:'short'}}</p>
     <span>By {{article.author}}</span>
     </article>
 </section>

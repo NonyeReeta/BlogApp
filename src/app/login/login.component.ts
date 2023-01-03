@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators, FormGroup} from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
 import { Router } from '@angular/router';
-import { HttpHeaders } from '@angular/common/http';
 
 
 @Component({
