@@ -19,17 +19,4 @@ export class ArticlesComponent implements OnInit {
   })
 };
 
-// sortByTimestamp() {
-//   this.sortTerm = 'timestamp';
-// }
-
-// sortByReadCount() {
-//   this.sortTerm = 'read_count';
-// }
-
-// sortByReadTime() {
-//   this.sortTerm ='reading_time'
-
-// }
-
 }

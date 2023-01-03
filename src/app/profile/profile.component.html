@@ -1,1 +1,23 @@
-<p>profile works!</p>
+
+<span style="margin-left: 10px;"><a routerLink=""><img src="assets/back-arrow.png"></a></span>
+<div class="profile-intro">
+    <h1>{{username}}</h1>
+    <h3>Click <a [routerLink]="['/create']">here</a> to create a new post</h3>
+</div>
+<div class="profile-articles">
+    <section class="articles">
+        <article class="article" *ngFor="let article of articles | filter:searchTerm | sort:sortTerm">
+        <h2 class="blog-title">{{article.title}}</h2>
+        <h6 class="blog-desc">{{article.description}}</h6>
+        <p class="blog-details">{{article.body.slice(0, article.body.length / 3)}} ... <a [routerLink]="['/article', article.title]" *ngIf="article.state == 'published'">read more</a></p>
+        <p>{{article.reading_time}} min | {{article.read_count}} reads | {{article.timestamp | date:'short'}}</p>
+        <p>State: {{article.state}}</p>
+        <div class="action-button">
+            <button *ngIf="article.state == 'draft'" (click)="publishArticle(article.title)">Publish</button>
+            <button [routerLink]="['/edit']">Edit</button>
+            <button (click)="deleteArticle(article.title)">Delete</button>
+        </div>
+        </article>
+</section>
+</div>
+

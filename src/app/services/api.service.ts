@@ -33,6 +33,18 @@ export class ApiService {
     return this.http.get(`${environment.API_BASE}/articles/article/${title}`)
   }
 
+  getArticlesByLoggedInUser(email: string): Observable<any> {
+    return this.http.get(`${environment.API_BASE}/articles/${email}/user-page`)
+  }
+
+  publishArticle( email: any, title: string): Observable<any> {
+    return this.http.put(`${environment.API_BASE}/articles/${email}/state/${title}`, {email,title});
+  }
+
+  deleteArticle( email: any, title: string ): Observable<any> {
+    return this.http.delete(`${environment.API_BASE}/articles/${email}/${title}/delete`);
+  }
+
   getUserData(): Observable<any> {
     return this.userData.asObservable();
   }

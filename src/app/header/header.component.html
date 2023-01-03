@@ -18,7 +18,7 @@
             <h4>You are currently here as a {{username}}. <a routerLink="login">Login</a> or <a routerLink="signup">Register</a> to create</h4>
             </div>
             <div *ngIf="loggedin">
-                <h2 style="text-transform: capitalize;">Welcome {{ username }}, Click here to go to <a>Profile</a></h2>
+                <h2 style="text-transform: capitalize;">Welcome {{ username }}, Click here to go to <a [routerLink]="['/profile', userEmail]">Profile</a></h2>
             </div>
 
     </div>

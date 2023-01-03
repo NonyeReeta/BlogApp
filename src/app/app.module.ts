@@ -14,6 +14,8 @@ import { ArticleComponent } from './article/article.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FilterPipe } from './search-articles.pipe';
 import { SortPipe } from './sort-articles.pipe';
+import { EditComponent } from './edit/edit.component';
+import { CreateComponent } from './create/create.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { SortPipe } from './sort-articles.pipe';
     ArticleComponent,
     ProfileComponent,
     FilterPipe,
-    SortPipe
+    SortPipe,
+    EditComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,

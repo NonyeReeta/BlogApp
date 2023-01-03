@@ -30,7 +30,7 @@ export class InterceptorInterceptor implements HttpInterceptor {
   .pipe(
     tap((evt) =>
     {
-      console.log(evt)
+      // console.log(evt)
       if (evt instanceof HttpResponse) {
         //do something with response
 

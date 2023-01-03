@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  userEmail: string = '';
   username: string = '';
   loggedin: boolean = false;
   constructor(private apiService: ApiService,
@@ -21,6 +21,7 @@ export class HeaderComponent implements OnInit {
     if(this.apiService.getUser() !== null) {
       const user = JSON.parse(this.apiService.getUser())
       this.username = user.firstName;
+      this.userEmail = user.email;
     }
     if(!this.loggedin) {
       this.username = 'Guest'
