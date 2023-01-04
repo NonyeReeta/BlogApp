@@ -1,0 +1,14 @@
+.btn {
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+form {
+    border-top: 2px solid rgb(133, 130, 130);
+    border-bottom: 2px solid rgb(133, 130, 130);
+    margin: 50px 100px;
+}
+
+.field {
+    margin: 10px 0;
+}

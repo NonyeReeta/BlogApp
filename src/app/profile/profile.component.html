@@ -2,7 +2,7 @@
 <span style="margin-left: 10px;"><a routerLink=""><img src="assets/back-arrow.png"></a></span>
 <div class="profile-intro">
     <h1>{{username}}</h1>
-    <h3>Click <a [routerLink]="['/create']">here</a> to create a new post</h3>
+    <h3>Click <a [routerLink]="['/create', userEmail]">here</a> to create a new post</h3>
 </div>
 <div class="profile-articles">
     <section class="articles">
