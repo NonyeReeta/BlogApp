@@ -38,8 +38,9 @@ export class ProfileComponent implements OnInit {
   }
 
   deleteArticle(title:string){
-    this.apiService.deleteArticle(this.userEmail,title)
+    this.apiService.deleteArticle(this.userEmail,title).subscribe(article => {
       location.reload();
+    });
   }
 
 }

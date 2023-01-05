@@ -41,7 +41,7 @@ export class ApiService {
     return this.http.put(`${environment.API_BASE}/articles/${email}/state/${title}`, {email,title});
   }
 
-  deleteArticle( email: any, title: string ): Observable<any> {
+  deleteArticle( email: any, title: any ): Observable<any> {
     return this.http.delete(`${environment.API_BASE}/articles/${email}/${title}/delete`);
   }
 
