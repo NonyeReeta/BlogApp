@@ -32,11 +32,14 @@ export class CreateComponent implements OnInit {
   createArticle() {
     const {email, lastName, firstName} = this.user
     this.apiService.createArticle(this.createArticleForm.value, {email, firstName, lastName}).subscribe(res => {
-      if(res.status === 500) {
-        this.error = res.error
+      // handle successful response
+      this.error = ''
+      this.router.navigate([`/profile/${email}`])
+    }, error => {
+      if (error) {
+        this.error = error.error
       }
-    })
-    console.log(this.createArticleForm.value)
-    // this.router.navigate([`/profile/${email}`])
+    });
   }
+
 }

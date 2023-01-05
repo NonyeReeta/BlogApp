@@ -46,7 +46,6 @@ export class ApiService {
   }
 
   createArticle(formData: any, userInfo: any): Observable<any> {
-    console.log(userInfo)
     return this.http.post(`${environment.API_BASE}/articles/${userInfo.email}/create`, formData, userInfo)
   }
 

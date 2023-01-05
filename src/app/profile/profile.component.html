@@ -14,7 +14,7 @@
         <p>State: {{article.state}}</p>
         <div class="action-button">
             <button *ngIf="article.state == 'draft'" (click)="publishArticle(article.title)">Publish</button>
-            <button [routerLink]="['/edit']">Edit</button>
+            <button [routerLink]="['/edit', userEmail, article.title]">Edit</button>
             <button (click)="deleteArticle(article.title)">Delete</button>
         </div>
         </article>

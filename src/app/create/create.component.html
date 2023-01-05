@@ -9,10 +9,10 @@
         <div class="field">
             <textarea name="body" formControlName="body" id="body" placeholder="Body"></textarea>
         </div>
-        <div class="field half">
+        <div class="field">
             <input type="text" formControlName="tags" name="tags" id="tags" placeholder="Tags">
         </div>
-        <div [hidden]="error == ''" style="color: red;">
+        <div [hidden]="error == ''" style="color: red;" class="field">
             <p>{{error}}</p>
         </div>
     </div>
