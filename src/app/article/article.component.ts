@@ -10,7 +10,8 @@ import { ApiService } from '../services/api.service';
 export class ArticleComponent implements OnInit {
   title: any = '';
   article: any = {}
-  constructor(private apiService: ApiService,
+  constructor(
+    private apiService: ApiService,
     private route: ActivatedRoute
     ) { }
 

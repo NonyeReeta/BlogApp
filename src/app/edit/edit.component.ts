@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators, FormGroup} from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../services/api.service';
 import { Router } from '@angular/router';
 
@@ -9,8 +10,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
+  title: any = '';
+  article: any = {}
 
-  constructor() { }
+  constructor(
+    private apiService: ApiService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
 
   editArticleForm = new FormGroup({
     title: new FormControl('', Validators.required),
@@ -19,12 +26,34 @@ export class EditComponent implements OnInit {
     tags: new FormControl('', Validators.required)
   })
 error: string = '';
+user: any = {};
 
   ngOnInit(): void {
+    this.title = this.route.snapshot.paramMap.get('title');
+    this.apiService.getArticleForEdit(this.title).subscribe(article => {
+    this.article = article
+    })
+    this.apiService.getUserData().subscribe(user => {
+      this.user = JSON.parse(user)
+    console.log(this.user)
+
+    })
   }
 
   submitArticle() {
-    
+    this.user.title = this.title
+    this.apiService.editArticle(this.editArticleForm.value, this.user).subscribe(res => {
+      // handle successful response
+      this.error = ''
+    this.router.navigate([`/profile/${this.user.email}`])
+    }, error => {
+      if (error) {
+        this.error = error.error
+        console.log(error.error)
+      }
+    }
+  
+)
   }
 
 }

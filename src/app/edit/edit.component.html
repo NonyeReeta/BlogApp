@@ -1,16 +1,20 @@
 <form [formGroup]="editArticleForm" (submit)="submitArticle()">
     <div class="fields">
         <div class="field half">
-            <input type="text" formControlName="title" name="title" id="title" placeholder="Title" />
+            <h6>Title: </h6>
+            <input type="text" formControlName="title" name="title" id="title" placeholder="Title" [(ngModel)]="article.title"/>
         </div>
         <div class="field">
-            <input type="text" formControlName="description" name="description" id="Description" placeholder="description" />
+            <h6>Description: </h6>
+            <input type="text" formControlName="description" name="description" id="Description" placeholder="description" [(ngModel)]="article.description"/>
         </div>
         <div class="field">
-            <textarea name="body" formControlName="body" id="body" placeholder="Body"></textarea>
+            <h6>Body: </h6>
+            <textarea name="body" formControlName="body" id="body"  rows="10" cols="40"placeholder="Body" [(ngModel)]="article.body" ></textarea>
         </div>
         <div class="field">
-            <input type="text" formControlName="tags" name="tags" id="tags" placeholder="Tags">
+            <h6>Tags: </h6>
+            <input type="text" formControlName="tags" name="tags" id="tags" placeholder="Tags" [(ngModel)]="article.tags">
         </div>
         <div [hidden]="error == ''" style="color: red;" class="field">
             <p>{{error}}</p>

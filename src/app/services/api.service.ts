@@ -49,8 +49,12 @@ export class ApiService {
     return this.http.post(`${environment.API_BASE}/articles/${userInfo.email}/create`, formData, userInfo)
   }
 
+  getArticleForEdit(title: string): Observable<any> {
+    return this.http.get(`${environment.API_BASE}/articles/editarticle/${title}`)
+  }
+
   editArticle( formData: any, userInfo: any ): Observable<any> {
-    return this.http.put(`${environment.API_BASE}/${userInfo.email}/${userInfo.title}/edit`, formData, userInfo)
+    return this.http.put(`${environment.API_BASE}/articles/${userInfo.email}/${userInfo.title}/edit`, formData)
   }
 
   getUserData(): Observable<any> {
