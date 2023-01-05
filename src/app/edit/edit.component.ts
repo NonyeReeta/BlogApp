@@ -35,8 +35,6 @@ user: any = {};
     })
     this.apiService.getUserData().subscribe(user => {
       this.user = JSON.parse(user)
-    console.log(this.user)
-
     })
   }
 

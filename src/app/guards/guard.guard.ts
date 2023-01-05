@@ -19,8 +19,8 @@ export class GuardGuard implements CanActivate {
 
   checkLogin(url: string): any {
     if(!this.apiService.isLoggedIn()) {
-
-      this.router.parseUrl('');
+      this.router.navigate(['/login']);
+      // this.router.parseUrl('');
       return false;
     }
     return true;
