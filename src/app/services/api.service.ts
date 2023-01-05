@@ -49,6 +49,10 @@ export class ApiService {
     return this.http.post(`${environment.API_BASE}/articles/${userInfo.email}/create`, formData, userInfo)
   }
 
+  editArticle( formData: any, userInfo: any ): Observable<any> {
+    return this.http.put(`${environment.API_BASE}/${userInfo.email}/${userInfo.title}/edit`, formData, userInfo)
+  }
+
   getUserData(): Observable<any> {
     return this.userData.asObservable();
   }

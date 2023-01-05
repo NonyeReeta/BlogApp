@@ -1,1 +1,22 @@
-<p>edit works!</p>
+<form [formGroup]="editArticleForm" (submit)="submitArticle()">
+    <div class="fields">
+        <div class="field half">
+            <input type="text" formControlName="title" name="title" id="title" placeholder="Title" />
+        </div>
+        <div class="field">
+            <input type="text" formControlName="description" name="description" id="Description" placeholder="description" />
+        </div>
+        <div class="field">
+            <textarea name="body" formControlName="body" id="body" placeholder="Body"></textarea>
+        </div>
+        <div class="field">
+            <input type="text" formControlName="tags" name="tags" id="tags" placeholder="Tags">
+        </div>
+        <div [hidden]="error == ''" style="color: red;" class="field">
+            <p>{{error}}</p>
+        </div>
+    </div>
+    <div class="btn">
+        <button>Save</button>
+    </div>
+</form>
