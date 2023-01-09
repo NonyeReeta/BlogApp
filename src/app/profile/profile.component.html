@@ -1,11 +1,14 @@
 
-<span style="margin-left: 10px;"><a routerLink=""><img src="assets/back-arrow.png"></a></span>
+<span style="margin-left: 10px;"><a routerLink=""><img src="assets/back-arrow.png">Home</a></span>
 <div class="profile-intro">
     <h1>{{username}}</h1>
     <h3>Click <a [routerLink]="['/create', userEmail]">here</a> to create a new post</h3>
 </div>
 <div class="profile-articles">
-    <section class="articles">
+    <div *ngIf="articles.length == 0">
+        <h3>You have no articles created.</h3>
+    </div>
+    <section class="articles" *ngIf="articles.length > 0">
         <article class="article" *ngFor="let article of articles | filter:searchTerm | sort:sortTerm">
         <h2 class="blog-title">{{article.title}}</h2>
         <h6 class="blog-desc">{{article.description}}</h6>

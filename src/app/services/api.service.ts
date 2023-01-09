@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient, HttpParams} from '@angular/common/http'
 import { Observable, BehaviorSubject } from 'rxjs';
 import {Router} from '@angular/router';
 import { environment } from 'src/environments/environment';
@@ -25,8 +25,11 @@ export class ApiService {
     return this.http.post(`${environment.API_BASE}/signup`, formData)
   }
 
-  getArticles(): Observable<any> {
-    return this.http.get(`${environment.API_BASE}/articles`)
+  getArticles(pageNumber: number, numberPerPage: number): Observable<any> {
+    const params = new HttpParams()
+    .set('pageNumber', pageNumber.toString())
+    .set('numberPerPage', numberPerPage.toString());
+    return this.http.get(`${environment.API_BASE}/articles`, {params})
   }
 
   getArticle(title: string): Observable<any> {

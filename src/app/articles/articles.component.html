@@ -16,6 +16,23 @@
 				<p>{{article.reading_time}} min | {{article.read_count}} reads | {{article.timestamp | date:'short'}}</p>
 				<span>By {{article.author}}</span>
 				</article>
+
+				<div id="par"></div>
+		<div class="pagination">
+			  <ul>
+				<li class="btn prev" [hidden]="pageNumber === 1">
+				  <span>prev</span>
+				</li>
+				<li class="num active"><span>1</span></li>
+				<li class="num"><span>2</span></li>
+				<li class="dots"><span>...</span></li>
+				<li class="num"><span>4</span></li>
+				<li class="btn next"  [hidden]="numberPerPage > 10">
+				  <span>next</span>
+				</li>
+			  </ul>
+			</div>
+
 		</section>
 		<section class="side-body">
 				<input type="text" placeholder="search articles by title" [(ngModel)]="searchTerm">
@@ -26,6 +43,8 @@
 					<option value="timestamp">Date</option>
 				</select>
 		</section>
+			
+
 		</body>
 		
 	</div>

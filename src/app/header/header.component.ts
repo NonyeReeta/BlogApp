@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.loggedin = this.apiService.isLoggedIn();
-    if(this.apiService.getUser() !== null) {
+    if(this.loggedin) {
       const user = JSON.parse(this.apiService.getUser())
       this.username = user.firstName;
       this.userEmail = user.email;
