@@ -56,14 +56,15 @@ h4, h1, p {
     font-weight: semi-bold;
   }
   ul li {
-    cursor: pointer;
+    cursor: default;
     padding: min(1.5rem, 1.5vw);
     text-align: center;
-    transition: all 0.3s;
   }
-  .dots {
-    cursor: default;
+
+  ul .btn {
+    cursor: pointer;
   }
+
   span {
     display: block;
   }
@@ -95,7 +96,6 @@ h4, h1, p {
     max-height: 50px;
   }
   ul .active,
-  ul .num:hover,
   ul .btn:hover {
     background-color: #f2849e;
     color: white;

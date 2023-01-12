@@ -21,15 +21,13 @@
 		<div class="pagination">
 			  <ul>
 				<li class="btn prev" [hidden]="pageNumber === 1">
-				  <span>prev</span>
+				  <span (click)="previousPage()" >prev</span>
 				</li>
-				<li class="num active"><span>1</span></li>
-				<li class="num"><span>2</span></li>
-				<li class="dots"><span>...</span></li>
-				<li class="num"><span>4</span></li>
-				<li class="btn next"  [hidden]="numberPerPage > 10">
-				  <span>next</span>
-				</li>
+				<li class="num" [ngClass]="{'active' : pageNumber == 1}"><span>1</span></li>
+				<li class="num" [ngClass]="{'active' : pageNumber == 2}"><span>2</span></li>
+				<li class="dots" [hidden]="pageNumber == 3"><span>...</span></li>
+				<li class="num"><span>{{pageNumber > 2 ? pageNumber : ''}}</span></li>
+				<li class="btn next" [hidden]="disableNext === true" ><span (click)="nextPage()">next</span></li>
 			  </ul>
 			</div>
 

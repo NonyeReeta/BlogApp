@@ -25,11 +25,8 @@ export class ApiService {
     return this.http.post(`${environment.API_BASE}/signup`, formData)
   }
 
-  getArticles(pageNumber: number, numberPerPage: number): Observable<any> {
-    const params = new HttpParams()
-    .set('pageNumber', pageNumber.toString())
-    .set('numberPerPage', numberPerPage.toString());
-    return this.http.get(`${environment.API_BASE}/articles`, {params})
+  getArticles(pageNumber: any): Observable<any> {
+    return this.http.get(`${environment.API_BASE}/articles?page=`+pageNumber,)
   }
 
   getArticle(title: string): Observable<any> {
