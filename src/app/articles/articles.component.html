@@ -27,7 +27,7 @@
 				<li class="num" [ngClass]="{'active' : pageNumber == 2}"><span>2</span></li>
 				<li class="dots" [hidden]="pageNumber == 3"><span>...</span></li>
 				<li class="num"><span>{{pageNumber > 2 ? pageNumber : ''}}</span></li>
-				<li class="btn next" [hidden]="disableNext === true" ><span (click)="nextPage()">next</span></li>
+				<li class="btn next" [hidden]="hideNext === true" ><span (click)="nextPage()">next</span></li>
 			  </ul>
 			</div>
 

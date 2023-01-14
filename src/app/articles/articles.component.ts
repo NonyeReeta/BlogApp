@@ -12,7 +12,7 @@ export class ArticlesComponent implements OnInit {
   searchTerm: string = '';
   sortTerm: string = '';
   pageNumber: number = 1;
-  disableNext: boolean = false;
+  hideNext: boolean = false;
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
@@ -30,10 +30,9 @@ nextPage() {
   this.apiService.getArticles(this.pageNumber).subscribe(data => {
     this.articles = data
   })
-  // TODO ADD CHECK TO DISABLED NEXT BUTTON
+  // TODO ADD CHECK TO hide NEXT BUTTON
   this.apiService.getArticles(this.pageNumber + 1).subscribe(data => {
-    this.disableNext = data.length === 0 ? true : false;
-    console.log(this.disableNext)
+    this.hideNext = data.length === 0 ? true : false;
   })
 }
 
@@ -41,8 +40,7 @@ previousPage() {
   this.pageNumber --;
   this.apiService.getArticles(this.pageNumber).subscribe(data => {
     this.articles = data
-    this.disableNext = data.length === 0 ? true : false;
-
+    this.hideNext = data.length === 0 ? true : false;
   })
 }
 
