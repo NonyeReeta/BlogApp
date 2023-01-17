@@ -7,6 +7,7 @@ import { ApiService } from '../services/api.service';
   styleUrls: ['./articles.component.css']
 })
 export class ArticlesComponent implements OnInit {
+
   articles: any = [];
   searchTerm: string = '';
   sortTerm: string = '';
@@ -15,14 +16,24 @@ export class ArticlesComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.loadArticles();
+    this.loadArticles(this.pageNumber);
 };
 
-  loadArticles() {
-  this.apiService.getArticles(this.pageNumber).subscribe(data => {
-    this.articles = data
-  })
+  loadArticles(pageNum: any) {
+    if(pageNum.target){
+      this.pageNumber = parseInt(pageNum.target.innerHTML)
+      this.apiService.getArticles(this.pageNumber).subscribe(data => {
+        this.articles = data;
+      })
+      this.apiService.getArticles(this.pageNumber + 1).subscribe(data => {
+        this.hideNext = data.length === 0 ? true : false;
+      })
+    }
+    this.apiService.getArticles(pageNum).subscribe(data => {
+      this.articles = data
+    })
 }
+
 
 nextPage() {
   this.pageNumber ++;

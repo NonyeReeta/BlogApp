@@ -23,10 +23,10 @@
 				<li class="btn prev" [hidden]="pageNumber === 1">
 				  <span (click)="previousPage()" >prev</span>
 				</li>
-				<li class="num" [ngClass]="{'active' : pageNumber == 1}"><span>1</span></li>
-				<li class="num" [ngClass]="{'active' : pageNumber == 2}"><span>2</span></li>
+				<li class="num" [ngClass]="{'active' : pageNumber == 1}" (click)="loadArticles($event)"><span>1</span></li>
+				<li class="num" [ngClass]="{'active' : pageNumber == 2}" (click)="loadArticles($event)"><span>2</span></li>
 				<li class="dots" [hidden]="pageNumber == 3"><span>...</span></li>
-				<li class="num" [ngClass]="{'active' : pageNumber > 2}"><span>{{pageNumber > 2 ? pageNumber : ''}}</span></li>
+				<li class="num" [ngClass]="{'active' : pageNumber > 2}" (click)="loadArticles($event)"><span>{{pageNumber > 2 ? pageNumber : '' }}</span></li>
 				<li class="btn next" [hidden]="hideNext === true" ><span (click)="nextPage()">next</span></li>
 			  </ul>
 			</div>

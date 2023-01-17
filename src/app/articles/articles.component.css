@@ -96,9 +96,11 @@ h4, h1, p {
     max-height: 50px;
   }
   ul .active,
+  ul .num:hover,
   ul .btn:hover {
     background-color: #f2849e;
     color: white;
+    cursor: pointer;
   }
   
   #par {
